@@ -16,7 +16,7 @@ public class SecurityConfig {
                 .formLogin(AbstractHttpConfigurer::disable)
                 .httpBasic(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/health", "/actuator/health").permitAll()
+                        .requestMatchers("/api/health/**", "/actuator/health").permitAll()
                         .anyRequest().authenticated()
                 )
                 .build();

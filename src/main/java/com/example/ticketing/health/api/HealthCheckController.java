@@ -1,5 +1,7 @@
 package com.example.ticketing.health.api;
 
+import com.example.ticketing.common.error.BusinessException;
+import com.example.ticketing.common.error.ErrorCode;
 import com.example.ticketing.common.response.ApiResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,5 +13,10 @@ public class HealthCheckController {
     @GetMapping("/api/health")
     public ApiResponse<Map<String, String>> health() {
         return ApiResponse.success(Map.of("status", "OK"));
+    }
+
+    @GetMapping("/api/health/error")
+    public ApiResponse<Map<String, String>> error(){
+        throw new BusinessException(ErrorCode.SEAT_ALREADY_OCCUPIED);
     }
 }
