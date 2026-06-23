@@ -8,7 +8,8 @@ public enum ErrorCode {
     INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "INTERNAL_SERVER_ERROR", "서버 오류가 발생했습니다."),
 
     EVENT_NOT_FOUND(HttpStatus.NOT_FOUND, "EVENT_NOT_FOUND", "콘서트를 찾을 수 없습니다."),
-    SEAT_ALREADY_OCCUPIED(HttpStatus.CONFLICT, "SEAT_ALREADY_OCCUPIED", "이미 선택할 수 없는 좌석입니다.");
+    SEAT_ALREADY_OCCUPIED(HttpStatus.CONFLICT, "SEAT_ALREADY_OCCUPIED", "이미 선택할 수 없는 좌석입니다."),
+    EMAIL_ALREADY_EXISTS(HttpStatus.CONFLICT, "EMAIL_ALREADY_EXISTS","이미 사용 중인 이메일 입니다.");
 
     private final HttpStatus status;
     private final String code;
